@@ -6,17 +6,12 @@
       <div>
       <h1><a href="">Danielle's Blog</a></h1>
     </div>
-    <div>
-      <p>published: 13.05.2017, 14:05</p>
-      <h2><a href="">Post 1</a></h2>
-      <p> post text here</p>
-      <p>For more, follow me <a href='https://twitter.com/daniellecrobins'>daniellecrobins</a> </p>
-  </div>
-  <div>
-<p>published: 13.05.2017, 14:05</p>
-      <h2><a href="">Post2</a></h2>
-      <p>post text here</p>
-      <p>For more, follow me <a href='https://twitter.com/daniellecrobins'>daniellecrobins</a> </p>
-  </div>
+      {% for post in posts %}
+      <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+      {% endfor %}
 </body>
 </html>
